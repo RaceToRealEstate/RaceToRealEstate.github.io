@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Race to Real Estate</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/Logo-Favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Bethany
+  * Updated: Mar 13 2024 with Bootstrap v5.3.3
+  * Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container">
+      <div class="header-container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1 class="text-light"><a href="index.html"><span>Race to Real Estate</span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="assets/img/logo.jpg" alt="" class="img-fluid"></a> -->
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+            <li><a class="nav-link scrollto" href="#services">Services</a></li>
+            <!-- <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+            <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
+            <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="#">Drop Down 1</a></li>
+                <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                  <ul>
+                    <li><a href="#">Deep Drop Down 1</a></li>
+                    <li><a href="#">Deep Drop Down 2</a></li>
+                    <li><a href="#">Deep Drop Down 3</a></li>
+                    <li><a href="#">Deep Drop Down 4</a></li>
+                    <li><a href="#">Deep Drop Down 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Drop Down 2</a></li>
+                <li><a href="#">Drop Down 3</a></li>
+                <li><a href="#">Drop Down 4</a></li>
+              </ul>
+            </li> -->
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li><a class="getstarted scrollto" href="https://docs.google.com/forms/d/e/1FAIpQLSePqZEY2wcet21gVmckr0RPH--eHhUQfn0xxPV2UFRAzkP4Lw/viewform?usp=pp_url&entry.532555539=Real+Estate+Photography&entry.532555539=Website+Development&entry.532555539=Branding+Design">Get Started!</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+      </div><!-- End Header Container -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
+      <h1>Race to Real Estate</h1>
+      <h2>Your one stop shop for Real Estate investor branding</h2>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSePqZEY2wcet21gVmckr0RPH--eHhUQfn0xxPV2UFRAzkP4Lw/viewform?usp=pp_url&entry.532555539=Real+Estate+Photography&entry.532555539=Website+Development&entry.532555539=Branding+Design" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="100">
+            <img src="assets/img/clients/Paypal-logo.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="200">
+            <img src="assets/img/clients/fujifilm_corporate_logo.svg" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="300">
+            <img src="assets/img/clients/rdc-logo-default.svg" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="400">
+            <img src="assets/img/clients/z-logo-default.svg" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="500">
+            <img src="assets/img/clients/Adobe_Corporate_Web_Logo.svg" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="600">
+            <img src="assets/img/clients/insta360-logo-black.svg" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Clients Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <h2>Branding for Real Estate Investors</h2>
+            <h3>Like any great business branding is key, we as investors are the business so we should brand ourselves like one as well</h3>
+            <!-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3> -->
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
+            <p>
+              Do not neglect the benefits that come with strong branding. Let us name a few, just for you...
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> <b>Differentiation:</b> Stand out in a competitive market, as well facilitate easier recognition and recall by potential clients and partners.</li>
+              <li><i class="ri-check-double-line"></i> <b>Credibility:</b> Enhance trust and credibility by showcasing expertise, experience, and a successful track record.</li>
+              <li><i class="ri-check-double-line"></i> <b>Networking:</b> Open doors to valuable networking opportunities, connecting investors with like-minded professionals, potential clients, and partners, leading to collaborations, referrals, and access to new deals</li>
+            </ul>
+            <p class="fst-italic">
+              The list continues, but don't let your lack of branding do the same!
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="147" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Photos Taken</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="321" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Inches Measured</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Minutes Of Support</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Succinct Goal</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-right">
+            <div class="content">
+              <h3>Why Choose Race to Real Estate for your branding?</h3>
+              <p>
+                There are many different branding companies out there, but none like Race to Real Estate. Centered around making the <b>best branding products for real estate investors by real estate investors</b>. 
+              </p>
+              <!-- <div class="text-center">
+                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+              </div> -->
+            </div>
+          </div>
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-receipt"></i>
+                    <h4>Best interest in mind</h4>
+                    <p>We have your best interest in mind. Our goal is to bring you the best product for your needs, not our wants</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Close to home</h4>
+                    <p>Located in the Triangle Area, we're close to you when you need us most</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-images"></i>
+                    <h4>Direct contact</h4>
+                    <p>Get in contact with us without having to jump through loops or call centers</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container">
+
+        <div class="text-center" data-aos="zoom-in">
+          <h3>Work with Us!</h3>
+          <p>Let us know what you'd like and we'll create a package just for your needs!</p>
+          <a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSePqZEY2wcet21gVmckr0RPH--eHhUQfn0xxPV2UFRAzkP4Lw/viewform?usp=pp_url&entry.532555539=Real+Estate+Photography&entry.532555539=Website+Development&entry.532555539=Branding+Design">Get Started!</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="section-title" data-aos="fade-right">
+              <h2>Services</h2>
+              <p>We offer a range of services that can be purchased individually, but are designed and work best as a package</p>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-md-6 d-flex align-items-stretch">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                  <h4><a href="">Website Design</a></h4>
+                  <p>Creating visually appealing and user-friendly websites and digital interfaces that align with the brand identity and provide a seamless brand experience for online audiences</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="icon"><i class="bx bx-file"></i></div>
+                  <h4><a href="">Real Estate Photography</a></h4>
+                  <p>Capturing and documenting your real estate renovations from beginning to end, using photos, 360 virtual tours, drone footage, and more...</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="icon"><i class="bx bx-tachometer"></i></div>
+                  <h4><a href="">Brand Identity</a></h4>
+                  <p>Designing visual elements that represent your brand, including logos, color palettes, typography, imagery, and other brand assets that convey its personality and values</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="icon"><i class="bx bx-world"></i></div>
+                  <h4><a href="">Digital Marketing</a></h4>
+                  <p>Leveraging online channels and technologies to promote products or services, engage with target audiences, and drive desired actions or outcomes.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <!-- <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-left">
+          <h2>Portfolio</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-card">Card</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 1</h4>
+                <p>App</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Web 3</h4>
+                <p>Web</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 2</h4>
+                <p>App</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Card 2</h4>
+                <p>Card</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Web 2</h4>
+                <p>Web</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 3</h4>
+                <p>App</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Card 1</h4>
+                <p>Card</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Card 3</h4>
+                <p>Card</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Web 3</h4>
+                <p>Web</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div> 
+    </section>-->
+    <!-- End Portfolio Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <!-- <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="section-title" data-aos="fade-right">
+              <h2>Testimonials</h2>
+              <p>Magnam dolores commodi suscipit uisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+          </div>
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <p>
+                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                      Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                    </p>
+                    <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                    <h3>Saul Goodman</h3>
+                    <h4>Ceo &amp; Founder</h4>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <p>
+                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                      Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                    </p>
+                    <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                    <h3>Sara Wilsson</h3>
+                    <h4>Designer</h4>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <p>
+                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                      Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                    </p>
+                    <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                    <h3>Jena Karlis</h3>
+                    <h4>Store Owner</h4>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <p>
+                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                      Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                    </p>
+                    <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                    <h3>Matt Brandon</h3>
+                    <h4>Freelancer</h4>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <p>
+                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                      Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                    </p>
+                    <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                    <h3>John Larson</h3>
+                    <h4>Entrepreneur</h4>
+                  </div>
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section> -->
+    <!-- End Testimonials Section -->
+
+    <!-- ======= Team Section ======= -->
+    <!-- <section id="team" class="team">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="section-title" data-aos="fade-right">
+              <h2>Team</h2>
+              <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+
+              <div class="col-lg-6">
+                <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                    <h4>Walter White</h4>
+                    <span>Chief Executive Officer</span>
+                    <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                    <div class="social">
+                      <a href=""><i class="ri-twitter-fill"></i></a>
+                      <a href=""><i class="ri-facebook-fill"></i></a>
+                      <a href=""><i class="ri-instagram-fill"></i></a>
+                      <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 mt-4 mt-lg-0">
+                <div class="member" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                    <h4>Sarah Jhonson</h4>
+                    <span>Product Manager</span>
+                    <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+                    <div class="social">
+                      <a href=""><i class="ri-twitter-fill"></i></a>
+                      <a href=""><i class="ri-facebook-fill"></i></a>
+                      <a href=""><i class="ri-instagram-fill"></i></a>
+                      <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 mt-4">
+                <div class="member" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                    <h4>William Anderson</h4>
+                    <span>CTO</span>
+                    <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+                    <div class="social">
+                      <a href=""><i class="ri-twitter-fill"></i></a>
+                      <a href=""><i class="ri-facebook-fill"></i></a>
+                      <a href=""><i class="ri-instagram-fill"></i></a>
+                      <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 mt-4">
+                <div class="member" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                    <h4>Amanda Jepson</h4>
+                    <span>Accountant</span>
+                    <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
+                    <div class="social">
+                      <a href=""><i class="ri-twitter-fill"></i></a>
+                      <a href=""><i class="ri-facebook-fill"></i></a>
+                      <a href=""><i class="ri-instagram-fill"></i></a>
+                      <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section> -->
+    <!-- End Team Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <div class="section-title">
+              <h2>Contact</h2>
+              <p>Get in contact with us from any of the ways listed. We're here when you need us most...</p>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+            <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.5548821141597!2d-78.7808281!3d35.7863089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acf3a5e495cb43%3A0x678df9869fdf904!2s205%20S%20Academy%20St%20%236057%2C%20Cary%2C%20NC%2027519!5e0!3m2!1sen!2sus!4v1710410181792!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
+            <div class="info mt-4">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location:</h4>
+              <p>205 S Academy St #6057, Cary, NC 27519</p>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 mt-4">
+                <div class="info">
+                  <i class="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>Info@RaceToRealEstate.com</p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="info w-100 mt-4">
+                  <i class="bi bi-phone"></i>
+                  <h4>Call:</h4>
+                  <p>+1 (919) 229 9499</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form> -->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <!-- <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Race to Real Estate</h3>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div> -->
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Race to Real Estate</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          Designed by <a href="https://racetorealestate.com/">Race to Real Estate</a>
+        </div>
+      </div>
+      <!-- <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div> -->
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
