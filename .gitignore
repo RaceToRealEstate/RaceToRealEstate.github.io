@@ -1,0 +1,5 @@
+# Large video masters exceed GitHub Pages' 100 MB/file limit — keep local only.
+# The 61 MB 720p (walkthrough-720.mp4) IS committed so the page plays on Pages.
+**/walkthrough.mp4
+*.mov
+*.m4a

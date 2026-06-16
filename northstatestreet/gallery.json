@@ -1,0 +1,31 @@
+{
+  "_about": "Display manifest for the Clark House listing gallery. The website consumes this instead of hard-coding <img> tags. Order = display order (hero first, lot last). 'alt' is for accessibility/SEO; 'caption' shows under/over the photo in the lightbox. Captions are written to the FSBO honesty guardrails (no claims that contradict what's visible; no unconfirmed counts). 2026-06-16: re-curated to the 17 re-edited 'mls_final' shots; room labels corrected after visual review (filenames 08/11/17 were misnamed). A backyard/lot shot was trialed but removed — the only available outdoor frames had blown-out skies.",
+  "_config": {
+    "sourceDir": "F:/Images/edited/mls_final",
+    "renditionWidths": [480, 1024, 2048],
+    "format": "webp",
+    "keepJpgFallback": true,
+    "hero": "01_front_exterior.jpg",
+    "heroRule": "Hero is the LCP image: render as a real <img>, preload it, fetchpriority=high, do NOT lazy-load. Lazy-load every other photo.",
+    "labelsNote": "Filenames 08_primary_closet, 11_bedroom_2 and 17_bonus_room are misnamed by the editor's best-guess; verified against the footage and corrected here (08 = a secondary bedroom, 11 = the primary suite, 17 = the garage). 18_yard_lot is the prior set's lot shot, exposure/white-balance corrected to match the graded final set."
+  },
+  "photos": [
+    { "order": 1,  "file": "01_front_exterior.jpg",      "room": "Front Exterior",      "alt": "Front exterior of the single-story custom home with gravel driveway and mature shade trees", "caption": "Custom-built single-story home, set among mature shade trees." },
+    { "order": 2,  "file": "02_driveway.jpg",             "room": "Driveway / Approach", "alt": "Gravel driveway and front approach to the home with attached garage", "caption": "Wide gravel drive and front approach." },
+    { "order": 3,  "file": "03_living_room.jpg",          "room": "Living Room",         "alt": "Open-concept living room with wood-look LVP flooring and a bright accent wall", "caption": "Open-concept living room with wood-look LVP flooring." },
+    { "order": 4,  "file": "04_kitchen.jpg",              "room": "Kitchen",             "alt": "Kitchen with navy shaker cabinets, quartz countertops and brass hardware", "caption": "Navy shaker cabinets, quartz counters, brass hardware." },
+    { "order": 5,  "file": "05_kitchen_2.jpg",            "room": "Kitchen & Dining",    "alt": "Kitchen with a sliding glass door out to the backyard patio", "caption": "Kitchen with a slider out to the backyard patio." },
+    { "order": 6,  "file": "06_kitchen_3.jpg",            "room": "Kitchen Detail",      "alt": "Kitchen detail showing quartz countertops and ample cabinetry along an accent wall", "caption": "Quartz counters and ample cabinetry." },
+    { "order": 7,  "file": "07_primary_bedroom.jpg",      "room": "Primary Bedroom",     "alt": "Staged primary bedroom with vaulted ceiling, ceiling fan and a walk-in closet", "caption": "Primary bedroom with vaulted ceiling and walk-in closet (staged)." },
+    { "order": 8,  "file": "11_bedroom_2.jpg",            "room": "Primary Suite",       "alt": "Primary suite showing the dresser wall and access to the ensuite bathroom", "caption": "Primary suite with ensuite bath access." },
+    { "order": 9,  "file": "09_primary_bath.jpg",         "room": "Primary Bath",        "alt": "Primary ensuite bathroom with a marble-look tub-shower, hex-tile floor and vanity", "caption": "Ensuite bath with tub-shower and marble-look tile." },
+    { "order": 10, "file": "10_primary_bath_vanity.jpg",  "room": "Primary Bath Vanity", "alt": "Primary bathroom quartz vanity with undermount sink and large mirror", "caption": "Primary bath quartz vanity." },
+    { "order": 11, "file": "08_primary_closet.jpg",       "room": "Bedroom",             "alt": "Secondary bedroom with vaulted ceiling, ceiling fan and a reach-in closet", "caption": "Bedroom with vaulted ceiling and reach-in closet." },
+    { "order": 12, "file": "12_bedroom_3.jpg",            "room": "Bedroom",             "alt": "Bedroom with wood-look LVP flooring and two windows", "caption": "Bedroom with two windows." },
+    { "order": 13, "file": "13_bedroom_4.jpg",            "room": "Bedroom",             "alt": "Bedroom with wood-look LVP flooring, a window and a reach-in closet", "caption": "Bedroom with a reach-in closet." },
+    { "order": 14, "file": "14_hall_bath.jpg",            "room": "Hall Bathroom",       "alt": "Hall bathroom with a quartz-top vanity, large mirror and tub", "caption": "Hall bath with quartz-top vanity." },
+    { "order": 15, "file": "15_half_bath.jpg",            "room": "Half Bath / Utility", "alt": "Half bath with laundry hookups and dark hex-tile flooring", "caption": "Half bath with laundry hookups and hex-tile floor." },
+    { "order": 16, "file": "16_laundry_room.jpg",         "room": "Laundry / Utility",   "alt": "Laundry and utility room with a tiled mop sink and water heater", "caption": "Laundry / utility room with mop sink and water heater." },
+    { "order": 17, "file": "17_bonus_room.jpg",           "room": "Garage",              "alt": "Attached garage with insulated, taped and unpainted drywall and an overhead door", "caption": "Attached garage with taped, unpainted drywall." }
+  ]
+}

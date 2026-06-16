@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Title/OG/JSON-LD carry no placeholder tokens (publish gate, §12). -->
+  <title>Custom Single Story Home For Sale By Owner | Race to Real Estate</title>
+  <meta name="description" content="A custom-built single-story home offered directly for sale by owner. Walkthrough video, 17-photo gallery, and direct contact with the licensed builder.">
+  <meta name="robots" content="noindex, nofollow"><!-- DRAFT: remove when published (§12) -->
+
+  <!-- Open Graph (factual, no placeholders) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Custom Single Story Home For Sale By Owner">
+  <meta property="og:description" content="A custom-built single-story home offered directly for sale by owner. Walkthrough video and 17-photo gallery.">
+  <meta property="og:url" content="https://racetorealestate.com/northstatestreet/">
+  <meta property="og:image" content="https://racetorealestate.com/northstatestreet/img/01_front_exterior-2048.jpg">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Custom Single Story Home For Sale By Owner">
+  <meta name="twitter:description" content="A custom-built single-story home offered directly for sale by owner.">
+  <meta name="twitter:image" content="https://racetorealestate.com/northstatestreet/img/01_front_exterior-2048.jpg">
+
+  <link rel="canonical" href="https://racetorealestate.com/northstatestreet/">
+
+  <!-- Favicons (reuse site) -->
+  <link href="/assets/img/Logo-Favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Preload the LCP hero image (NOT lazy-loaded) -->
+  <link rel="preload" as="image"
+        href="img/01_front_exterior-1024.webp"
+        imagesrcset="img/01_front_exterior-480.webp 480w, img/01_front_exterior-1024.webp 1024w, img/01_front_exterior-2048.webp 2048w"
+        imagesizes="100vw" fetchpriority="high">
+
+  <!-- One critical heading font preloaded; rest via stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:400,500,600,700|Poppins:300,400,500,600,700|Playfair+Display:700,700italic" rel="stylesheet">
+
+  <!-- Vendor CSS (self-hosted, reused from the site) -->
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <style>
+    :root { --ch-ink:#2b2b2b; --ch-accent:#0d6e6e; --ch-muted:#6b7280; }
+    body { font-family:"Open Sans",system-ui,sans-serif; color:var(--ch-ink); }
+    h1,h2,h3,.ch-brand { font-family:"Raleway","Poppins",sans-serif; }
+    .ch-draft-flag { background:#fff3cd; color:#664d03; border:1px solid #ffe69c;
+      font-size:.8rem; padding:.35rem .6rem; border-radius:.4rem; display:inline-block; }
+    .ch-token { background:#f1f3f5; border-radius:.25rem; padding:0 .3rem; font-family:monospace; color:#495057; }
+    /* Header (ref #15): transparent with black text over the hero, then a solid green bar
+       with white text once you scroll. Fancy serif brand mark. */
+    .ch-nav { position:fixed; top:0; left:0; right:0; z-index:1030; background:transparent;
+      background-image:linear-gradient(to bottom, rgba(255,255,255,.5), rgba(255,255,255,0));
+      transition:background-color .25s ease, box-shadow .25s ease, background-image .25s ease; }
+    .ch-nav .ch-brand { font-family:"Playfair Display",Georgia,serif; font-style:italic;
+      font-weight:700; font-size:1.4rem; letter-spacing:.3px; color:#111; }
+    .ch-nav a.nav-link { color:#111; font-weight:600; text-shadow:0 1px 3px rgba(255,255,255,.55); }
+    .ch-nav .ch-cta { color:#fff; }
+    .ch-nav.ch-nav--scrolled { background:var(--ch-accent); background-image:none;
+      box-shadow:0 1px 12px rgba(0,0,0,.14); }
+    .ch-nav.ch-nav--scrolled .ch-brand { color:#fff; }
+    .ch-nav.ch-nav--scrolled a.nav-link { color:#fff; text-shadow:none; }
+    .ch-nav.ch-nav--scrolled .ch-cta { background:#fff !important; color:var(--ch-accent) !important;
+      border-color:#fff !important; }
+    :where(section,header)[id] { scroll-margin-top:72px; }
+    /* See-through (frosted) lightbox backdrop instead of a solid background (ref #3). */
+    .goverlay { background:rgba(17,24,39,.42) !important;
+      -webkit-backdrop-filter:blur(9px) saturate(1.1); backdrop-filter:blur(9px) saturate(1.1); }
+    .ch-cta { background:var(--ch-accent); border-color:var(--ch-accent); }
+    .ch-cta:hover { background:#0a5757; border-color:#0a5757; }
+    .ch-hero { position:relative; }
+    .ch-hero img.ch-hero-img { width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; display:block; }
+    .ch-hero-overlay { position:absolute; inset:auto 0 0 0; padding:1.5rem 1rem;
+      background:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,0)); color:#fff; }
+    .ch-hero-overlay h1 { font-size:clamp(1.6rem,4vw,2.6rem); margin:0 0 .3rem; text-shadow:0 2px 8px rgba(0,0,0,.6); }
+    .ch-stat-strip { display:flex; flex-wrap:wrap; gap:1rem; font-weight:600; }
+    .ch-stat-strip span { display:inline-flex; align-items:center; gap:.35rem; }
+    /* Mobile: the 3:2 hero is too short for the overlay text, which overflowed into the
+       fixed nav. Give the hero a min-height, let the image cover it, and pad the overlay
+       clear of the nav so the heading never collides with the header. */
+    @media (max-width:768px){
+      .ch-hero { min-height:82vh; }
+      .ch-hero img.ch-hero-img { position:absolute; inset:0; width:100%; height:100%; aspect-ratio:auto; }
+      .ch-hero-overlay { padding-top:4.5rem; }
+      .ch-hero-overlay h1 { font-size:1.5rem; line-height:1.22; }
+      .ch-stat-strip { gap:.35rem .9rem; font-size:.92rem; }
+    }
+    .ch-section { padding:3rem 0; }
+    /* Prominent custom-build statement with an emblem. */
+    .ch-pitch { padding:4rem 0; background:#fff; }
+    .ch-pitch-inner { max-width:1000px; margin:0 auto; display:flex; align-items:center; gap:2.8rem; }
+    .ch-pitch-emblem { display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;
+      width:132px; height:132px; border-radius:50%;
+      background:rgba(13,110,110,.10); color:var(--ch-accent); font-size:3.6rem;
+      box-shadow:0 0 0 10px rgba(13,110,110,.05); }
+    .ch-pitch-text { font-family:"Raleway",sans-serif; font-weight:500; color:var(--ch-ink);
+      font-size:clamp(1.3rem,2.4vw,1.75rem); line-height:1.55; margin:0; flex:1; }
+    .ch-pitch-text strong { color:var(--ch-accent); font-weight:700; }
+    @media (max-width:768px){
+      .ch-pitch-inner { flex-direction:column-reverse; text-align:center; gap:1.4rem; }
+      .ch-pitch-emblem { width:104px; height:104px; font-size:2.8rem; }
+    }
+    /* Full-screen walkthrough panel the user scrolls into; video covers the viewport. */
+    .ch-video-full { position:relative; height:100vh; min-height:480px; background:#000; overflow:hidden; }
+    .ch-video-el { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .ch-video-overlay { position:absolute; inset:0; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; text-align:center; gap:.6rem; color:#fff;
+      background:linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.5)); padding:1rem;
+      transition:background .4s ease; }
+    /* Once the viewer turns sound on: drop the heading/scrim so it's just the video,
+       leaving only a small unobtrusive mute toggle in the corner. */
+    .ch-video-full.ch-playing .ch-video-overlay { background:transparent;
+      justify-content:flex-end; align-items:flex-end; padding:1.1rem 1.3rem; }
+    .ch-video-full.ch-playing .ch-video-overlay h2 { display:none; }
+    .ch-video-full.ch-playing #videoSound { margin:0; border-radius:50%; width:2.8rem; height:2.8rem;
+      padding:0; display:inline-flex; align-items:center; justify-content:center; opacity:.85; }
+    .ch-video-full.ch-playing #videoSound:hover { opacity:1; }
+    @media (max-width:768px){
+      /* On phones, show the full 16:9 frame instead of cropping the sides to fill a tall viewport. */
+      .ch-video-full { height:auto; min-height:0; aspect-ratio:16/9; }
+    }
+    .ch-video-wrap { position:relative; aspect-ratio:16/9; background:#000; border-radius:.6rem; overflow:hidden; }
+    /* Collapsible walkthrough transcript (accessibility + context). */
+    .ch-transcript { border:1px solid #e5e7eb; border-radius:.6rem; padding:1.1rem 1.3rem; background:#fff; }
+    .ch-transcript > summary { cursor:pointer; font-family:"Raleway",sans-serif; font-weight:600;
+      font-size:1.1rem; color:var(--ch-accent); list-style:none; }
+    .ch-transcript > summary::-webkit-details-marker { display:none; }
+    .ch-transcript > summary i { margin-right:.4rem; }
+    .ch-transcript-cols { columns:2; column-gap:2.2rem; margin-top:1rem; }
+    .ch-transcript-cols h3 { font-size:.78rem; text-transform:uppercase; letter-spacing:.6px;
+      color:var(--ch-accent); margin:1.1rem 0 .25rem; break-after:avoid; }
+    .ch-transcript-cols h3:first-child { margin-top:0; }
+    .ch-transcript-cols p { font-size:.95rem; line-height:1.55; break-inside:avoid; margin-bottom:.7rem; }
+    @media (max-width:768px){ .ch-transcript-cols { columns:1; } }
+    .ch-video-wrap video, .ch-video-wrap iframe { width:100%; height:100%; border:0; display:block; }
+    .ch-video-placeholder { position:absolute; inset:0; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; color:#fff; text-align:center; gap:.6rem;
+      background:rgba(0,0,0,.45); }
+    .ch-swiper { position:relative; }
+    /* Drop the pagination dots into a gap below the photos. */
+    .ch-swiper .swiper { padding-bottom:34px; }
+    .ch-swiper .swiper-pagination { bottom:2px; }
+    .ch-swiper .swiper-slide img { width:100%; height:auto; aspect-ratio:3/2; object-fit:cover;
+      border-radius:.5rem; background:#e9ecef; cursor:zoom-in; }
+    .ch-slide-label { position:absolute; left:.6rem; bottom:.6rem; background:rgba(0,0,0,.6);
+      color:#fff; font-size:.8rem; padding:.2rem .55rem; border-radius:.3rem; }
+    .ch-counter { position:absolute; right:.6rem; top:.6rem; background:rgba(0,0,0,.6); color:#fff;
+      font-size:.8rem; padding:.2rem .55rem; border-radius:.3rem; z-index:5; }
+    .ch-feature i { color:var(--ch-accent); font-size:1.4rem; }
+    .ch-trust img { border-radius:.6rem; }
+    .ch-noscript-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1rem; }
+    .ch-nofig img { width:100%; height:auto; border-radius:.5rem; }
+    .ch-nofig figcaption { font-size:.85rem; color:var(--ch-muted); margin-top:.3rem; }
+    .ch-map-ph { aspect-ratio:16/9; background:#e9ecef; border-radius:.6rem; display:flex;
+      align-items:center; justify-content:center; color:var(--ch-muted); text-align:center; padding:1rem; }
+    footer.ch-footer { background:#1f2937; color:#d1d5db; padding:2.5rem 0; font-size:.92rem; }
+    footer.ch-footer a { color:#9ec5c5; }
+    .ch-eho { display:inline-flex; align-items:center; gap:.4rem; }
+    .ch-eho .bi-house-door { font-size:1.2rem; }
+    @media (prefers-reduced-motion: reduce) {
+      [data-aos] { transition:none !important; transform:none !important; opacity:1 !important; }
+      html { scroll-behavior:auto; }
+    }
+    @media print {
+      .ch-nav, .ch-video-wrap, #contact form, .ch-share, .ch-cta, .swiper-button-next,
+      .swiper-button-prev { display:none !important; }
+      body { color:#000; }
+      .ch-section { padding:1rem 0; page-break-inside:avoid; }
+      .ch-noscript-grid { display:grid !important; }
+      a[href]:after { content:""; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Sticky nav ======= -->
+  <nav class="ch-nav">
+    <div class="container d-flex align-items-center justify-content-between py-2">
+      <a class="ch-brand fw-bold text-decoration-none" href="/index.html">North State St.</a>
+      <div class="d-none d-md-flex gap-3 align-items-center">
+        <a class="nav-link p-0" href="#gallery">Gallery</a>
+        <a class="nav-link p-0" href="#video">Video</a>
+        <a class="nav-link p-0" href="#details">Details</a>
+        <a class="nav-link p-0" href="#contact">Contact</a>
+      </div>
+      <a class="btn btn-sm text-white ch-cta" href="#contact">Schedule a Showing</a>
+    </div>
+  </nav>
+
+  <!-- ======= Hero (LCP) ======= -->
+  <header class="ch-hero">
+    <img class="ch-hero-img" fetchpriority="high" decoding="async"
+         width="2048" height="1365"
+         src="img/01_front_exterior-2048.jpg"
+         srcset="img/01_front_exterior-480.webp 480w, img/01_front_exterior-1024.webp 1024w, img/01_front_exterior-2048.webp 2048w"
+         sizes="100vw"
+         alt="Front exterior of the single-story custom ranch home with gravel driveway and mature shade trees">
+    <div class="ch-hero-overlay">
+      <div class="container">
+        <!-- The single top-level heading: factual, no placeholder (address shown below as a draft line). -->
+        <h1>Custom Single Story Home &mdash; For Sale By Owner</h1>
+        <p class="mb-2"><strong>Address:</strong> 132 North State Street, Haw River, NC 27258
+          &nbsp;|&nbsp; <strong>Price:</strong> $380,000
+          <small class="d-block text-white-50">Includes a $10,000 appliance allowance &mdash; pick your
+            own finishes (offer subject to change; confirm at contract).</small></p>
+        <div class="ch-stat-strip">
+          <span><i class="bi bi-door-open"></i> 4 beds</span>
+          <span><i class="bi bi-droplet"></i> 3 baths</span>
+          <span><i class="bi bi-rulers"></i> 1,500 sq ft*</span>
+          <span><i class="bi bi-tree"></i> 0.4 acre lot*</span>
+        </div>
+        <a class="btn ch-cta text-white mt-3" href="#contact">Schedule a Showing</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======= Custom-build statement ======= -->
+  <section class="ch-pitch" data-aos="fade-up">
+    <div class="container">
+      <div class="ch-pitch-inner">
+        <p class="ch-pitch-text">More than a house &mdash; <strong>a place to settle into</strong>.
+          Custom-built from the ground up by a licensed builder who cared about the details, with a
+          bright, open great room made for gathering, a kitchen ready for your own finishing touches,
+          and a yard of mature shade trees to come home to. Room to grow, room to breathe, and room to
+          make it your own.</p>
+        <span class="ch-pitch-emblem"><i class="bi bi-award-fill"></i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Video (full-screen; autoplays muted when scrolled into view) ======= -->
+  <!-- data-embed holds the video/walkthrough-720.mp4 token. When a real URL exists, JS sets the native
+       <video> source (R2 file) or an autoplay <iframe> (Bunny) and plays it via IntersectionObserver.
+       No video file is committed and no CDN player script is loaded. -->
+  <section id="video" class="ch-video-full" data-embed="video/walkthrough-720.mp4" data-embed-mobile="video/walkthrough-720.mp4">
+    <video id="chVideo" class="ch-video-el" muted loop playsinline preload="none"
+           poster="img/01_front_exterior-2048.webp"></video>
+    <div class="ch-video-overlay">
+      <h2 class="text-white mb-1">Walkthrough Video</h2>
+      <div class="ch-video-placeholder" id="videoPlaceholder">
+        <i class="bi bi-play-circle" style="font-size:3rem"></i>
+        <p class="mb-0">Walkthrough video coming soon.</p>
+        <small>The narrated tour is being color-finished. It will autoplay here when it lands.</small>
+      </div>
+      <button class="btn ch-cta text-white mt-2 d-none" id="videoSound" type="button">
+        <i class="bi bi-volume-mute"></i> Tap for sound</button>
+    </div>
+  </section>
+
+  <!-- ======= Walkthrough transcript (accessibility + context) ======= -->
+  <section class="ch-section" data-aos="fade-up">
+    <div class="container">
+      <details class="ch-transcript">
+        <summary><i class="bi bi-card-text"></i> Read the walkthrough narration (the builder's tour)</summary>
+        <p class="text-muted small mt-2 mb-0">A lightly edited transcript of John Clark's narrated
+          video tour &mdash; these are the builder's own on-camera descriptions of the home.</p>
+        <div class="ch-transcript-cols">
+          <h3>Welcome</h3>
+          <p>Welcome to 132 North State Street &mdash; licensed GC John Clark here. A quick shout-out
+            to Glenn Mira, woodshop teacher at Leesville Road High School, and to Al Rhiners &mdash;
+            without them this wouldn't be possible. First thing to note is how high these ceilings
+            are: ten feet, with two-by-six frame studs.</p>
+
+          <h3>Kitchen</h3>
+          <p>Into the kitchen: a beautiful "blue regatta" quartz countertop dotted with gold knobs and
+            handles &mdash; meant to look like a starry night as the sun is setting. There's no
+            backsplash and no appliances on purpose: we're offering $10,000 toward those allowances
+            because we didn't want to make the design choices for you. The sink is a fireclay sink
+            from Italy &mdash; one of the strongest, most durable you can buy &mdash; with the garbage
+            disposal ready to go, plus a pantry with plenty of storage.</p>
+
+          <h3>Garage</h3>
+          <p>Through a custom Therma-Tru door into the garage. Technically one car &mdash; you could
+            probably fit two, but don't quote me on that. It's 16 feet wide with a nine-foot-tall
+            door, so you can pull a full-size pickup in and open the doors with no problem. We
+            insulated the ceiling and walls, so it's fully insulated aside from the door, with 5/8"
+            drywall throughout &mdash; the same 5/8" drywall we used through the entire house, which
+            is meant to be about 50 percent stronger.</p>
+
+          <h3>Patio &amp; Lot</h3>
+          <p>Out on the patio &mdash; meant to give a little privacy off the garage door &mdash; with
+            beautiful banana plants and roughly a half acre. Both neighbors have been great; we've
+            already agreed about putting a fence in, no problem on either side. (I'm a
+            privacy-shrubbery guy myself, but that's your call.)</p>
+
+          <h3>Dining &amp; Flooring</h3>
+          <p>Back through the sliding glass door into the dining room and kitchen. This floor was a
+            job to install &mdash; premium LVP, 100 percent waterproof. I laid it myself and tore it
+            up three times to get it to hug the pantry just right. Engineered trusses run the entire
+            house, which means there are no interior load-bearing walls &mdash; you can rearrange any
+            of these interior walls as you see fit.</p>
+
+          <h3>Laundry &amp; Utility</h3>
+          <p>My favorite room is the laundry. Note the black hexagon tile. What started as a floor
+            drain we built up into a mop sink, all powered by a commercial-grade hot water heater.</p>
+
+          <h3>Hall Bathroom</h3>
+          <p>The first bathroom keeps the honeycomb theme, now in gray, with black epoxy grout on the
+            walls and floors &mdash; 100 percent waterproof and easy to live with, so you never have
+            to worry about sealing it. Epoxy grout is commercial grade &mdash; it's what restaurants
+            use.</p>
+
+          <h3>Master Suite</h3>
+          <p>The master bedroom has a customizable closet. The master bath has a larger-than-normal
+            door, a white hexagon pattern continuing the black grout, and a walk-in tub. I'm curious
+            about the single-sink vanity &mdash; should we have done two? You let me know.</p>
+
+          <h3>Bedrooms &amp; Closing</h3>
+          <p>Into the main bedroom &mdash; a nice closet at the end for linens, and the largest of the
+            three bedrooms, with a ceiling fan. Thanks to everybody involved, easily over 200 people.
+            I hope you love what you see &mdash; stop back by and take a tour. Any questions, please
+            reach out using the contact below.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ======= Photo gallery (built at runtime from gallery.json) ======= -->
+  <section id="gallery" class="ch-section bg-light" data-aos="fade-up">
+    <div class="container">
+      <h2 class="mb-3">Photo Gallery <small class="text-muted fs-6">17 photos</small></h2>
+      <div class="ch-swiper">
+        <div class="ch-counter" id="galleryCounter">1 / 17</div>
+        <div class="swiper" id="gallerySwiper">
+          <div class="swiper-wrapper" id="gallerySwiperWrapper"><!-- populated from gallery.json --></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- No-JS / crawler fallback: every photo from the manifest, all lazy-loaded. -->
+      <noscript>
+        <div class="ch-noscript-grid mt-3">
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/01_front_exterior-1024.webp"
+             srcset="img/01_front_exterior-480.webp 480w, img/01_front_exterior-1024.webp 1024w, img/01_front_exterior-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Front exterior of the single-story custom home with gravel driveway and mature shade trees">
+        <figcaption>Front Exterior &mdash; Custom-built single-story home, set among mature shade trees.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/02_driveway-1024.webp"
+             srcset="img/02_driveway-480.webp 480w, img/02_driveway-1024.webp 1024w, img/02_driveway-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Gravel driveway and front approach to the home with attached garage">
+        <figcaption>Driveway / Approach &mdash; Wide gravel drive and front approach.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/03_living_room-1024.webp"
+             srcset="img/03_living_room-480.webp 480w, img/03_living_room-1024.webp 1024w, img/03_living_room-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Open-concept living room with wood-look LVP flooring and a bright accent wall">
+        <figcaption>Living Room &mdash; Open-concept living room with wood-look LVP flooring.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/04_kitchen-1024.webp"
+             srcset="img/04_kitchen-480.webp 480w, img/04_kitchen-1024.webp 1024w, img/04_kitchen-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Kitchen with navy shaker cabinets, quartz countertops and brass hardware">
+        <figcaption>Kitchen &mdash; Navy shaker cabinets, quartz counters, brass hardware.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/05_kitchen_2-1024.webp"
+             srcset="img/05_kitchen_2-480.webp 480w, img/05_kitchen_2-1024.webp 1024w, img/05_kitchen_2-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Kitchen with a sliding glass door out to the backyard patio">
+        <figcaption>Kitchen & Dining &mdash; Kitchen with a slider out to the backyard patio.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/06_kitchen_3-1024.webp"
+             srcset="img/06_kitchen_3-480.webp 480w, img/06_kitchen_3-1024.webp 1024w, img/06_kitchen_3-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Kitchen detail showing quartz countertops and ample cabinetry along an accent wall">
+        <figcaption>Kitchen Detail &mdash; Quartz counters and ample cabinetry.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/07_primary_bedroom-1024.webp"
+             srcset="img/07_primary_bedroom-480.webp 480w, img/07_primary_bedroom-1024.webp 1024w, img/07_primary_bedroom-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Staged primary bedroom with vaulted ceiling, ceiling fan and a walk-in closet">
+        <figcaption>Primary Bedroom &mdash; Primary bedroom with vaulted ceiling and walk-in closet (staged).</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/11_bedroom_2-1024.webp"
+             srcset="img/11_bedroom_2-480.webp 480w, img/11_bedroom_2-1024.webp 1024w, img/11_bedroom_2-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Primary suite showing the dresser wall and access to the ensuite bathroom">
+        <figcaption>Primary Suite &mdash; Primary suite with ensuite bath access.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/09_primary_bath-1024.webp"
+             srcset="img/09_primary_bath-480.webp 480w, img/09_primary_bath-1024.webp 1024w, img/09_primary_bath-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Primary ensuite bathroom with a marble-look tub-shower, hex-tile floor and vanity">
+        <figcaption>Primary Bath &mdash; Ensuite bath with tub-shower and marble-look tile.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/10_primary_bath_vanity-1024.webp"
+             srcset="img/10_primary_bath_vanity-480.webp 480w, img/10_primary_bath_vanity-1024.webp 1024w, img/10_primary_bath_vanity-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Primary bathroom quartz vanity with undermount sink and large mirror">
+        <figcaption>Primary Bath Vanity &mdash; Primary bath quartz vanity.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/08_primary_closet-1024.webp"
+             srcset="img/08_primary_closet-480.webp 480w, img/08_primary_closet-1024.webp 1024w, img/08_primary_closet-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Secondary bedroom with vaulted ceiling, ceiling fan and a reach-in closet">
+        <figcaption>Bedroom &mdash; Bedroom with vaulted ceiling and reach-in closet.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/12_bedroom_3-1024.webp"
+             srcset="img/12_bedroom_3-480.webp 480w, img/12_bedroom_3-1024.webp 1024w, img/12_bedroom_3-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Bedroom with wood-look LVP flooring and two windows">
+        <figcaption>Bedroom &mdash; Bedroom with two windows.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/13_bedroom_4-1024.webp"
+             srcset="img/13_bedroom_4-480.webp 480w, img/13_bedroom_4-1024.webp 1024w, img/13_bedroom_4-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Bedroom with wood-look LVP flooring, a window and a reach-in closet">
+        <figcaption>Bedroom &mdash; Bedroom with a reach-in closet.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/14_hall_bath-1024.webp"
+             srcset="img/14_hall_bath-480.webp 480w, img/14_hall_bath-1024.webp 1024w, img/14_hall_bath-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Hall bathroom with a quartz-top vanity, large mirror and tub">
+        <figcaption>Hall Bathroom &mdash; Hall bath with quartz-top vanity.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/15_half_bath-1024.webp"
+             srcset="img/15_half_bath-480.webp 480w, img/15_half_bath-1024.webp 1024w, img/15_half_bath-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Half bath with laundry hookups and dark hex-tile flooring">
+        <figcaption>Half Bath / Utility &mdash; Half bath with laundry hookups and hex-tile floor.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/16_laundry_room-1024.webp"
+             srcset="img/16_laundry_room-480.webp 480w, img/16_laundry_room-1024.webp 1024w, img/16_laundry_room-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Laundry and utility room with a tiled mop sink and water heater">
+        <figcaption>Laundry / Utility &mdash; Laundry / utility room with mop sink and water heater.</figcaption>
+      </figure>
+      <figure class="ch-nofig">
+        <img loading="lazy" decoding="async" width="2048" height="1365"
+             src="img/17_bonus_room-1024.webp"
+             srcset="img/17_bonus_room-480.webp 480w, img/17_bonus_room-1024.webp 1024w, img/17_bonus_room-2048.webp 2048w"
+             sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw"
+             alt="Attached garage with insulated, taped and unpainted drywall and an overhead door">
+        <figcaption>Garage &mdash; Attached garage with taped, unpainted drywall.</figcaption>
+      </figure>
+        </div>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- ======= Features & specs ======= -->
+  <section id="details" class="ch-section" data-aos="fade-up">
+    <div class="container">
+      <h2 class="mb-4">Features &amp; Specs</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 ch-feature"><i class="bi bi-bounding-box"></i>
+          <h3 class="h6 mt-2">Reconfigure any room later</h3>
+          <p class="small text-muted">No interior load-bearing walls &mdash; engineered trusses span
+            the house (builder's description).</p></div>
+        <div class="col-md-6 col-lg-4 ch-feature"><i class="bi bi-bricks"></i>
+          <h3 class="h6 mt-2">Solid build</h3>
+          <p class="small text-muted">2&times;6 framing and 5/8" drywall (marketed as ~50% stronger).
+            Builder's on-camera statements, not independently verified.</p></div>
+        <div class="col-md-6 col-lg-4 ch-feature"><i class="bi bi-egg-fried"></i>
+          <h3 class="h6 mt-2">Custom kitchen</h3>
+          <p class="small text-muted">Navy shaker cabinets, quartz counters, brass hardware, and a
+            slider out to the backyard.</p></div>
+        <div class="col-md-6 col-lg-4 ch-feature"><i class="bi bi-droplet-half"></i>
+          <h3 class="h6 mt-2">Kid and pet friendly floors</h3>
+          <p class="small text-muted">Premium LVP flooring (manufacturer-rated waterproof).</p></div>
+        <div class="col-md-6 col-lg-4 ch-feature"><i class="bi bi-truck"></i>
+          <h3 class="h6 mt-2">Insulated attached garage</h3>
+          <p class="small text-muted">16 ft wide with a nine-foot door &mdash; room for a full-size
+            pickup. Insulated ceiling and walls (drywall taped, not yet painted).</p></div>
+        <div class="col-md-6 col-lg-4 ch-feature"><i class="bi bi-droplet-fill"></i>
+          <h3 class="h6 mt-2">Chef's kitchen sink</h3>
+          <p class="small text-muted">An Italian fireclay sink &mdash; one of the most durable you can
+            buy (the builder's description) &mdash; with garbage disposal and a walk-in pantry.</p></div>
+        <div class="col-md-6 col-lg-4 ch-feature"><i class="bi bi-shield-check"></i>
+          <h3 class="h6 mt-2">Worry-free bathrooms</h3>
+          <p class="small text-muted">Commercial-grade epoxy grout in the hall bath &mdash; marketed as
+            waterproof with no resealing, the same grout restaurants use (builder's claim).</p></div>
+        <div class="col-md-6 col-lg-4 ch-feature"><i class="bi bi-bucket"></i>
+          <h3 class="h6 mt-2">Hardworking utility room</h3>
+          <p class="small text-muted">A large laundry/utility room with a built-up mop sink and a
+            commercial-grade water heater.</p></div>
+        <div class="col-md-6 col-lg-4 ch-feature"><i class="bi bi-tree"></i>
+          <h3 class="h6 mt-2">Private outdoor space</h3>
+          <p class="small text-muted">A 0.4-acre lot* with mature shade trees, banana plants, and a
+            patio off the garage for a little privacy.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= $10,000 appliance allowance ======= -->
+  <section id="allowance" class="ch-section bg-light" data-aos="fade-up">
+    <div class="container">
+      <h2 class="mb-2">A $10,000 Appliance Allowance</h2>
+      <p class="lead">Make the kitchen yours from day one. Instead of inheriting someone else's
+        appliances, this home is offered with a <strong>$10,000 appliance allowance</strong> &mdash;
+        so you choose your own range, refrigerator, dishwasher, and more to fit how you cook and live.</p>
+      <ul class="row g-2 list-unstyled mt-2">
+        <li class="col-md-6"><i class="bi bi-check2-circle" style="color:var(--ch-accent)"></i>
+          Pick your own finishes and brands &mdash; no compromises.</li>
+        <li class="col-md-6"><i class="bi bi-check2-circle" style="color:var(--ch-accent)"></i>
+          Pairs with the custom navy shaker kitchen, quartz counters, and walk-in pantry.</li>
+      </ul>
+      <p class="small text-muted mt-2">Allowance offer is subject to change; confirm details at contract.</p>
+    </div>
+  </section>
+
+  <!-- ======= Meet the builder / Buy direct ======= -->
+  <section id="builder" class="ch-section ch-trust" data-aos="fade-up">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-4">
+          <img loading="lazy" decoding="async" class="img-fluid rounded shadow-sm" width="640" height="794"
+               src="img/builder-640.webp"
+               srcset="img/builder-640.webp 640w, img/builder-960.webp 960w"
+               sizes="(min-width:768px) 33vw, 100vw"
+               alt="Portrait of John Clark, the licensed general contractor who built the home">
+        </div>
+        <div class="col-md-8">
+          <h2>Buy Direct From the Builder</h2>
+          <p>You're dealing directly with the licensed general contractor who built this home.
+            That means real answers about how it was
+            constructed, and no listing-agent markup between you and the seller. This is a home built
+            to live in, not a quick flip.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Contact / lead capture ======= -->
+  <section id="contact" class="ch-section bg-light" data-aos="fade-up">
+    <div class="container">
+      <h2 class="mb-3">Request a Showing</h2>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <form id="contactForm" action="{{FORM_ENDPOINT}}" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="{{FORM_ACCESS_KEY}}">
+            <input type="hidden" name="subject" value="New showing request - Clark House listing">
+            <!-- Honeypot: bots fill this; humans never see it. -->
+            <input type="checkbox" name="botcheck" class="d-none" tabindex="-1" autocomplete="off"
+                   aria-hidden="true" style="position:absolute;left:-9999px">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="cName">Name</label>
+                <input class="form-control" id="cName" name="name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="cEmail">Email</label>
+                <input class="form-control" id="cEmail" name="email" type="email" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="cPhone">Phone (optional)</label>
+                <input class="form-control" id="cPhone" name="phone" type="tel">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="cWhen">Pre-approval / timeframe (optional)</label>
+                <input class="form-control" id="cWhen" name="prequal" placeholder="e.g. pre-approved, buying in 60 days">
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="cMsg">Message</label>
+                <textarea class="form-control" id="cMsg" name="message" rows="4"></textarea>
+              </div>
+            </div>
+            <button class="btn ch-cta text-white mt-3" type="submit" id="contactSubmit">Request a Showing</button>
+            <p class="small text-muted mt-2 mb-0">Your info goes straight to the owner &mdash; no agents, no spam.</p>
+            <p class="small mt-1" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div class="col-lg-5">
+          <div class="p-3 bg-white rounded shadow-sm">
+            <h3 class="h6">Prefer to reach out directly?</h3>
+            <p class="mb-1"><i class="bi bi-telephone"></i>
+              <a href="tel:9198307194">(919) 830-7194</a></p>
+            <p class="mb-1"><i class="bi bi-envelope"></i>
+              <a href="mailto:johclark@gmail.com">johclark@gmail.com</a></p>
+            <p class="small text-muted mb-0">Showings by appointment only.</p>
+            <a class="btn ch-cta text-white w-100 mt-3" href="#contact">Schedule a Showing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+  <footer class="ch-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <p class="mb-1"><strong>Race to Real Estate</strong></p>
+          <p class="mb-1">132 North State Street, Haw River, NC 27258</p>
+          <p class="mb-1"><a href="tel:9198307194">(919) 830-7194</a> &middot;
+             <a href="mailto:johclark@gmail.com">johclark@gmail.com</a></p>
+          <p class="ch-eho mt-2"><i class="bi bi-house-door"></i> <span>Equal Housing Opportunity</span></p>
+          <button class="btn btn-sm btn-outline-light ch-share mt-2" id="shareBtn" type="button">
+            <i class="bi bi-share"></i> Share this listing</button>
+        </div>
+        <div class="col-md-7">
+          <p class="small mb-2">Square footage, lot size, and dimensions are approximate; buyer to verify.</p>
+          <p class="small mb-2">Price and availability subject to change without notice.</p>
+          <p class="small mb-2">Information deemed reliable but not guaranteed; buyer to independently verify all facts and inspect.</p>
+          <p class="small mb-2">Construction specifications are the builder's statements and are not
+            independently verified. Property photos and video are honestly edited (exposure, white
+            balance, lens, and color only) &mdash; no virtual staging, sky replacement, or object
+            removal.</p>
+          <p class="small mb-2">Disclosures (NC Residential Property &amp; Owner's Association
+            Disclosure and Mineral and Oil &amp; Gas statements) are available from the owner on request.</p>
+          <p class="small mb-0">&copy; Race to Real Estate. For Sale By Owner.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS (self-hosted) -->
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script>
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (window.AOS) AOS.init({ disable: reduce, duration: 600, once: true });
+
+      // Header blends into the hero, then turns solid once you scroll past it (ref #15).
+      var nav = document.querySelector(".ch-nav");
+      function onScroll() {
+        if (!nav) return;
+        nav.classList.toggle("ch-nav--scrolled", window.scrollY > 40);
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      var GALLERY_SIZES = "(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw";
+
+      function base(file) { return file.replace(/\.[^.]+$/, ""); }
+      function srcset(b) {
+        return "img/" + b + "-480.webp 480w, img/" + b + "-1024.webp 1024w, img/" + b + "-2048.webp 2048w";
+      }
+
+      // Build the gallery from the manifest (gallery.json) - not hard-coded.
+      fetch("gallery.json").then(function (r) { return r.json(); }).then(function (data) {
+        var photos = (data.photos || []).slice().sort(function (a, b) { return a.order - b.order; });
+        var wrap = document.getElementById("gallerySwiperWrapper");
+        photos.forEach(function (p) {
+          var b = base(p.file);
+          var slide = document.createElement("div");
+          slide.className = "swiper-slide";
+          slide.innerHTML =
+            '<a class="glightbox" data-gallery="clark" href="img/' + b + '-2048.webp"' +
+            ' data-description="' + (p.room + ' — ' + p.caption).replace(/"/g, "&quot;") + '">' +
+            '<img loading="lazy" decoding="async" width="2048" height="1365"' +
+            ' src="img/' + b + '-480.webp"' +
+            ' srcset="' + srcset(b) + '"' +
+            ' sizes="' + GALLERY_SIZES + '"' +
+            ' alt="' + p.alt.replace(/"/g, "&quot;") + '"></a>' +
+            '<span class="ch-slide-label">' + p.room + '</span>';
+          wrap.appendChild(slide);
+        });
+
+        var counter = document.getElementById("galleryCounter");
+        var swiper = new Swiper("#gallerySwiper", {
+          slidesPerView: 1, spaceBetween: 12, grabCursor: true,
+          keyboard: { enabled: true },
+          navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+          pagination: { el: ".swiper-pagination", clickable: true },
+          breakpoints: { 576: { slidesPerView: 2 }, 992: { slidesPerView: 3 } },
+          on: {
+            slideChange: function () {
+              counter.textContent = (this.realIndex + 1) + " / " + photos.length;
+            },
+            init: function () { counter.textContent = "1 / " + photos.length; }
+          }
+        });
+
+        var lightbox = GLightbox({ selector: ".glightbox", touchNavigation: true, loop: true });
+        lightbox.on("close", function () {
+          // Return focus to the active slide trigger for keyboard users.
+          var active = document.querySelector("#gallerySwiper .swiper-slide-active a.glightbox");
+          if (active) active.focus();
+        });
+      }).catch(function () {
+        var counter = document.getElementById("galleryCounter");
+        if (counter) counter.textContent = "Gallery unavailable";
+      });
+
+      // Contact form: never silently POST to the placeholder endpoint.
+      var form = document.getElementById("contactForm");
+      var status = document.getElementById("formStatus");
+      var submitBtn = document.getElementById("contactSubmit");
+      var endpoint = form ? form.getAttribute("action") : "";
+      var key = form ? (form.querySelector('[name=access_key]') || {}).value : "";
+      var unconfigured = !endpoint || endpoint.indexOf("{{") !== -1 || (key && key.indexOf("{{") !== -1);
+      if (form && unconfigured) {
+        submitBtn.disabled = true;
+        status.textContent = "Contact form coming soon — call or email the owner directly using the links on the right.";
+      }
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          if (unconfigured) {            // hard guard: do not POST the literal token
+            e.preventDefault();
+            status.textContent = "Contact form coming soon — please call or email the owner directly.";
+            return;
+          }
+          if (form.botcheck && form.botcheck.checked) { e.preventDefault(); return; }
+          e.preventDefault();
+          status.textContent = "Sending…";
+          fetch(endpoint, { method: "POST", body: new FormData(form),
+              headers: { "Accept": "application/json" } })
+            .then(function (r) { return r.json(); })
+            .then(function () { status.textContent = "Thank you — your request was sent to the owner."; form.reset(); })
+            .catch(function () { status.textContent = "Something went wrong. Please call or email the owner directly."; });
+        });
+      }
+
+      // Share control: Web Share API with copy-link fallback.
+      var shareBtn = document.getElementById("shareBtn");
+      if (shareBtn) {
+        shareBtn.addEventListener("click", function () {
+          var url = window.location.href;
+          if (navigator.share) {
+            navigator.share({ title: document.title, url: url }).catch(function () {});
+          } else if (navigator.clipboard) {
+            navigator.clipboard.writeText(url).then(function () {
+              shareBtn.textContent = "Link copied!";
+            });
+          }
+        });
+      }
+
+      // Full-screen walkthrough: autoplay (muted) when scrolled into view, once a real URL exists.
+      var vSection = document.getElementById("video");
+      var vEl = document.getElementById("chVideo");
+      var vPh = document.getElementById("videoPlaceholder");
+      var vSound = document.getElementById("videoSound");
+      var embed = vSection ? vSection.getAttribute("data-embed") : "";
+      var embedMobile = vSection ? vSection.getAttribute("data-embed-mobile") : "";
+      // Serve the lighter 720p file to small/portrait screens when one is configured.
+      var useMobile = embedMobile && embedMobile.indexOf("{{") === -1 &&
+        (window.matchMedia && window.matchMedia("(max-width: 768px)").matches);
+      if (useMobile) { embed = embedMobile; }
+      var configured = embed && embed.indexOf("{{") === -1;
+      if (configured && vEl) {
+        var isFile = /\.(mp4|webm|mov)(\?|$)/i.test(embed);
+        if (isFile) {
+          vEl.src = embed;
+          if (vPh) vPh.style.display = "none";
+          if (vSound) vSound.classList.remove("d-none");
+          if ("IntersectionObserver" in window) {
+            new IntersectionObserver(function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) { vEl.play().catch(function () {}); }
+                else { vEl.pause(); }
+              });
+            }, { threshold: 0.5 }).observe(vSection);
+          } else { vEl.setAttribute("autoplay", ""); }
+          if (vSound) vSound.addEventListener("click", function () {
+            vEl.muted = !vEl.muted;
+            // Strip the overlay text/scrim so it's just the video; keep a small mute toggle.
+            vSection.classList.add("ch-playing");
+            vSound.innerHTML = vEl.muted ? '<i class="bi bi-volume-mute"></i>'
+                                         : '<i class="bi bi-volume-up"></i>';
+            vSound.setAttribute("aria-label", vEl.muted ? "Unmute video" : "Mute video");
+          });
+        } else {
+          // Hosted embed (e.g. Bunny Stream): autoplay muted via URL params.
+          var iframe = document.createElement("iframe");
+          iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+          iframe.setAttribute("allowfullscreen", "");
+          iframe.setAttribute("title", "Property walkthrough video");
+          iframe.className = "ch-video-el";
+          iframe.style.border = "0";
+          iframe.src = embed + (embed.indexOf("?") === -1 ? "?" : "&") + "autoplay=1&muted=1";
+          if (vEl) vEl.remove();
+          if (vPh) vPh.style.display = "none";
+          vSection.insertBefore(iframe, vSection.firstChild);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
