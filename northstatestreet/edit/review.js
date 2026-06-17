@@ -4,9 +4,12 @@
    copied to clipboard / emailed back. The live page is never touched. */
 (function () {
   "use strict";
-  var KEY = "nss-review-v1";
-  var MAILTO = "edgelesscorner@gmail.com";
-  var EDIT_SEL = "h1,h2,h3,h4,h5,p,li,figcaption,summary,blockquote";
+  var KEY = "nss-review-v2";
+  var DEST = "barrington@racetorealestate.com";
+  // Web3Forms access key for DEST. When set, the Email button sends automatically
+  // (no mail client). Get a free key at https://web3forms.com (it is emailed to DEST)
+  // and paste it here. Left blank => falls back to opening a prefilled email.
+  var ACCESS_KEY = "";
 
   // ---------- state ----------
   function blank() { return { edits: {}, comments: [], nextC: 1 }; }
@@ -29,31 +32,57 @@
   }
 
   // ---------- inline text editing ----------
+  // Block-level tags: an element that contains one of these is a container, not a leaf
+  // text block, so we don't make it editable (we make its inner text blocks editable).
+  var BLOCK = "address,article,aside,blockquote,div,dl,dd,dt,fieldset,figure,figcaption," +
+    "footer,form,h1,h2,h3,h4,h5,h6,header,li,main,nav,ol,p,pre,section,table,tbody,td,th,thead,tr,ul";
+  function isControl(node) {
+    return node.matches("button,input,select,textarea,label,svg,i.bi,.navbar-toggler," +
+      "[data-bs-toggle],.swiper-button-prev,.swiper-button-next,.swiper-pagination,#videoSound,.ch-counter");
+  }
+  function excludedZone(node) {
+    return !!node.closest(".nssr,.nssr-bar,.nssr-panel,script,style,noscript," +
+      ".swiper-button-prev,.swiper-button-next,.swiper-pagination,#videoSound,.ch-counter");
+  }
+  function hasOwnText(node) {
+    for (var i = 0; i < node.childNodes.length; i++) {
+      var c = node.childNodes[i];
+      if (c.nodeType === 3 && c.nodeValue.trim()) return true;
+    }
+    return false;
+  }
+  function hasBlockChild(node) {
+    for (var i = 0; i < node.children.length; i++) if (node.children[i].matches(BLOCK)) return true;
+    return false;
+  }
+  var ridCounter = 0;
   function initEditable() {
-    var i = 0;
-    document.querySelectorAll(EDIT_SEL).forEach(function (node) {
-      if (node.hasAttribute("data-nssr-edit")) return;
-      if (inUI(node)) return;
-      if (node.closest("nav, .ch-nav, script, style, form, #videoPlaceholder, #videoSound, .ch-counter")) return;
-      if (node.querySelector(EDIT_SEL)) return;          // only leaf text blocks
-      if (!node.textContent.trim()) return;
-      var rid = "r" + (i++);                              // deterministic on a static page
-      node.setAttribute("data-nssr-edit", rid);
-      node.setAttribute("contenteditable", "true");
-      node.setAttribute("spellcheck", "true");
-      if (!store.edits[rid]) node.dataset.nssrOrig = node.textContent.trim();
-      else { node.innerHTML = store.edits[rid].html; node.classList.add("nssr-changed"); node.dataset.nssrOrig = store.edits[rid].orig; }
-      node.addEventListener("focus", function () { if (node.dataset.nssrOrig == null) node.dataset.nssrOrig = node.textContent.trim(); });
-      node.addEventListener("input", function () {
-        var orig = node.dataset.nssrOrig || "";
-        var cur = node.textContent.trim();
-        if (cur === orig) { delete store.edits[rid]; node.classList.remove("nssr-changed"); }
-        else { store.edits[rid] = { orig: orig, text: cur, html: node.innerHTML, section: sectionLabel(node) }; node.classList.add("nssr-changed"); }
-        save();
-      });
-      // keep in-page links from navigating while editing
-      node.addEventListener("keydown", function (e) { if (e.key === "Enter" && node.tagName === "H1") e.preventDefault(); });
+    var all = document.body.getElementsByTagName("*");
+    for (var i = 0; i < all.length; i++) {
+      var node = all[i];
+      if (node.nodeType !== 1 || node.hasAttribute("data-nssr-edit")) continue;
+      if (excludedZone(node) || isControl(node)) continue;
+      if (!hasOwnText(node)) continue;            // must directly hold visible text
+      if (hasBlockChild(node)) continue;          // only leaf text blocks (avoids nesting)
+      if (node.closest("[data-nssr-edit]")) continue; // an ancestor is already editable
+      assignEditable(node, "r" + (ridCounter++));
+    }
+  }
+  function assignEditable(node, rid) {
+    node.setAttribute("data-nssr-edit", rid);
+    node.setAttribute("contenteditable", "true");
+    node.setAttribute("spellcheck", "true");
+    if (!store.edits[rid]) node.dataset.nssrOrig = node.textContent.trim();
+    else { node.innerHTML = store.edits[rid].html; node.classList.add("nssr-changed"); node.dataset.nssrOrig = store.edits[rid].orig; }
+    node.addEventListener("focus", function () { if (node.dataset.nssrOrig == null) node.dataset.nssrOrig = node.textContent.trim(); });
+    node.addEventListener("input", function () {
+      var orig = node.dataset.nssrOrig || "";
+      var cur = node.textContent.trim();
+      if (cur === orig) { delete store.edits[rid]; node.classList.remove("nssr-changed"); }
+      else { store.edits[rid] = { orig: orig, text: cur, html: node.innerHTML, section: sectionLabel(node) }; node.classList.add("nssr-changed"); }
+      save();
     });
+    node.addEventListener("keydown", function (e) { if (e.key === "Enter" && node.tagName === "H1") e.preventDefault(); });
   }
 
   // ---------- comments (select text -> note) ----------
@@ -201,12 +230,31 @@
       navigator.clipboard.writeText(txt).then(function () { toast(msg || "Copied"); }, function () { toast("Downloaded (copy blocked)"); });
     } else { toast(msg || "Done"); }
   }
-  function emailReport() {
+  function emailReport(btn) {
     var body = buildReport();
-    var url = "mailto:" + MAILTO + "?subject=" + encodeURIComponent("Feedback — 132 North State Street") +
-      "&body=" + encodeURIComponent(body.slice(0, 1700) + (body.length > 1700 ? "\n\n[…full feedback also downloaded as a file—please attach it]" : ""));
-    exportFile();                              // ensure full version is saved too
-    window.location.href = url;
+    if (!ACCESS_KEY) {
+      // No email service configured yet -> open a prefilled message instead.
+      window.location.href = "mailto:" + DEST + "?subject=" + encodeURIComponent("Feedback — 132 North State Street") +
+        "&body=" + encodeURIComponent(body.slice(0, 1700) + (body.length > 1700 ? "\n\n[…full feedback also downloaded — please attach it]" : ""));
+      exportFile();
+      return;
+    }
+    if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        subject: "Feedback — 132 North State Street",
+        from_name: "North State St — Jon's review",
+        replyto: DEST,
+        message: body
+      })
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (d && d.success) toast("✓ Feedback emailed to Barrington");
+      else { toast("Send failed — downloading instead"); exportFile(); }
+    }).catch(function () { toast("Send failed — downloading instead"); exportFile(); })
+      .then(function () { if (btn) { btn.disabled = false; btn.innerHTML = "✉ Email feedback"; } });
   }
 
   function refreshCounts() {
@@ -224,7 +272,7 @@
       '<button class="nssr-btn" data-act="panel">💬 Notes <span class="nssr-count">0</span></button>' +
       '<button class="nssr-btn" data-act="copy">⧉ Copy</button>' +
       '<button class="nssr-btn nssr-primary" data-act="export">⬇ Export</button>' +
-      '<button class="nssr-btn nssr-primary" data-act="email">✉ Email Barry</button>' +
+      '<button class="nssr-btn nssr-primary" data-act="email">✉ Email feedback</button>' +
       '<button class="nssr-btn nssr-danger" data-act="reset">↺ Reset</button>';
     document.body.appendChild(bar);
 
@@ -238,7 +286,7 @@
       if (act === "panel") panel.classList.toggle("nssr-open");
       else if (act === "copy") copyText(buildReport(), "Feedback copied to clipboard");
       else if (act === "export") exportFile();
-      else if (act === "email") emailReport();
+      else if (act === "email") emailReport(b);
       else if (act === "reset") { if (confirm("Clear ALL your edits and notes? This cannot be undone.")) { localStorage.removeItem(KEY); location.reload(); } }
     });
     panel.querySelector('[data-act="close"]').addEventListener("click", function () { panel.classList.remove("nssr-open"); });
@@ -247,7 +295,7 @@
   // ---------- in-page anchor scrolling (because <base> rewrites #links) ----------
   document.addEventListener("click", function (e) {
     var a = e.target.closest ? e.target.closest('a[href*="#"]') : null;
-    if (!a || a.closest(".nssr")) return;
+    if (!a || a.closest(".nssr") || a.closest("[data-nssr-edit]")) return; // editable link -> let him edit it
     var href = a.getAttribute("href") || "";
     var hash = href.slice(href.indexOf("#"));
     if (hash.length > 1) { var t = document.querySelector(hash); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: "smooth" }); } }
