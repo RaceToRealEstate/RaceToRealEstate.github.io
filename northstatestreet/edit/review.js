@@ -4,7 +4,7 @@
    copied to clipboard / emailed back. The live page is never touched. */
 (function () {
   "use strict";
-  var KEY = "nss-review-v2";
+  var KEY = "nss-review-v3";
   var DEST = "barrington@racetorealestate.com";
   // Web3Forms access key for DEST. When set, the Email button sends automatically
   // (no mail client). Get a free key at https://web3forms.com (it is emailed to DEST)
@@ -20,10 +20,44 @@
   // ---------- utilities ----------
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
   function inUI(node) { return !!(node && node.closest && node.closest(".nssr, .nssr-bar, .nssr-panel, .nssr-pop, .nssr-addbtn, .nssr-toast")); }
+  function cap(s) { return s.replace(/\b\w/g, function (c) { return c.toUpperCase(); }); }
+  function asEl(node) { return node && (node.nodeType === 1 ? node : node.parentElement); }
+  // Where on the page is this? Friendly, human-readable region name.
   function sectionLabel(node) {
-    var s = node && node.closest ? node.closest("section, header, footer") : null;
-    if (s) { var h = s.querySelector("h1,h2,h3"); if (h) return h.textContent.trim().replace(/\s+/g, " ").slice(0, 48); }
+    var e = asEl(node); if (!e) return "Page";
+    if (e.closest("nav, .ch-nav")) return "Header / nav";
+    if (e.closest(".ch-hero")) return "Hero (top banner)";
+    if (e.closest("footer, .ch-footer")) return "Footer";
+    var s = e.closest("section");
+    if (s) {
+      if (s.id) return cap(s.id.replace(/[-_]+/g, " ")) + " section";
+      var h = s.querySelector("h2,h3,h1");
+      if (h) return h.textContent.trim().replace(/\s+/g, " ").slice(0, 44);
+    }
     return "Page";
+  }
+  // What kind of text is it?
+  function friendlyType(el) {
+    if (!el) return "text";
+    var t = el.tagName;
+    if (/^H[1-6]$/.test(t)) return "Heading";
+    return ({ P: "Paragraph", LI: "List item", FIGCAPTION: "Photo caption", SUMMARY: "Section toggle",
+      A: "Link", TD: "Table cell", TH: "Table cell", BLOCKQUOTE: "Quote", SPAN: "Text", DIV: "Text block" })[t] || t.toLowerCase();
+  }
+  // Precise CSS locator so the exact element can be found in the source.
+  function cssPath(el) {
+    if (!el || el.nodeType !== 1) return "";
+    var parts = [];
+    while (el && el.nodeType === 1 && el.tagName !== "BODY") {
+      if (el.id) { parts.unshift("#" + el.id); break; }
+      var sel = el.tagName.toLowerCase(), p = el.parentElement;
+      if (p) {
+        var same = Array.prototype.filter.call(p.children, function (c) { return c.tagName === el.tagName; });
+        if (same.length > 1) sel += ":nth-of-type(" + (same.indexOf(el) + 1) + ")";
+      }
+      parts.unshift(sel); el = p;
+    }
+    return parts.join(" > ");
   }
   function toast(msg) {
     var t = document.querySelector(".nssr-toast") || document.body.appendChild(el("div", "nssr-toast"));
@@ -79,7 +113,11 @@
       var orig = node.dataset.nssrOrig || "";
       var cur = node.textContent.trim();
       if (cur === orig) { delete store.edits[rid]; node.classList.remove("nssr-changed"); }
-      else { store.edits[rid] = { orig: orig, text: cur, html: node.innerHTML, section: sectionLabel(node) }; node.classList.add("nssr-changed"); }
+      else {
+        store.edits[rid] = { rid: rid, orig: orig, text: cur, html: node.innerHTML,
+          section: sectionLabel(node), type: friendlyType(node), locator: cssPath(node) };
+        node.classList.add("nssr-changed");
+      }
       save();
     });
     node.addEventListener("keydown", function (e) { if (e.key === "Enter" && node.tagName === "H1") e.preventDefault(); });
@@ -139,8 +177,15 @@
 
   function addComment(quote, note) {
     var cid = store.nextC++;
-    var section = savedRange ? sectionLabel(savedRange.commonAncestorContainer.parentNode || savedRange.commonAncestorContainer) : "Page";
-    store.comments.push({ id: cid, quote: quote, note: note, section: section });
+    var container = savedRange ? asEl(savedRange.commonAncestorContainer) : null;
+    var host = container ? (container.closest("[data-nssr-edit]") || container) : null;
+    store.comments.push({
+      id: cid, quote: quote, note: note,
+      section: sectionLabel(host || container),
+      type: friendlyType(host),
+      locator: host ? cssPath(host) : "",
+      context: host ? host.textContent.trim().replace(/\s+/g, " ") : ""
+    });
     if (savedRange) wrapRange(savedRange, cid);
     savedRange = null;
     save(); renderPanel(); toast("Note added");
@@ -199,25 +244,60 @@
   }
 
   // ---------- export ----------
+  function rule(ch) { return new Array(60).join(ch || "="); }
   function buildReport() {
-    var lines = ["# Feedback — 132 North State Street", "", "Reviewer: Jon — " + new Date().toLocaleString(), ""];
-    var edits = Object.keys(store.edits);
-    lines.push("## Text edits (" + edits.length + ")", "");
-    if (!edits.length) lines.push("_(none)_", "");
-    edits.forEach(function (k) {
-      var e = store.edits[k];
-      lines.push("- **[" + e.section + "]**");
-      lines.push("  - was: “" + e.orig + "”");
-      lines.push("  - now: “" + e.text + "”");
+    var edits = Object.keys(store.edits).map(function (k) { return store.edits[k]; });
+    var L = [];
+    L.push(rule("="));
+    L.push("FEEDBACK — 132 North State Street (Clark House listing)");
+    L.push("Reviewer: Jon   ·   " + new Date().toLocaleString());
+    L.push("Page reviewed: https://racetorealestate.com/northstatestreet/");
+    L.push(rule("="));
+    L.push("");
+    L.push("HOW TO READ THIS: each item says where it is (section + element +");
+    L.push("locator). For TEXT EDITS, replace the ORIGINAL text with the NEW text.");
+    L.push("For NOTES, Jon is commenting on the quoted text — no change unless his");
+    L.push("note asks for one.");
+    L.push("");
+
+    L.push(rule("-"));
+    L.push("TEXT EDITS  (" + edits.length + ")");
+    L.push(rule("-"));
+    if (!edits.length) L.push("(none)");
+    edits.forEach(function (e, i) {
+      L.push("");
+      L.push("[Edit " + (i + 1) + "]  " + e.section + "  ·  " + (e.type || "text"));
+      L.push("  Locator: " + (e.locator || "n/a") + "   (field " + (e.rid || "?") + ")");
+      L.push("  ORIGINAL:");
+      L.push(indent(e.orig));
+      L.push("  CHANGE TO:");
+      L.push(indent(e.text));
     });
-    lines.push("", "## Comments & notes (" + store.comments.length + ")", "");
-    if (!store.comments.length) lines.push("_(none)_", "");
-    store.comments.forEach(function (c) {
-      lines.push(c.id + ". **[" + c.section + "]** “" + c.quote.replace(/\s+/g, " ").slice(0, 200) + "”");
-      lines.push("   → " + c.note);
+
+    L.push("");
+    L.push(rule("-"));
+    L.push("NOTES & COMMENTS  (" + store.comments.length + ")");
+    L.push(rule("-"));
+    if (!store.comments.length) L.push("(none)");
+    store.comments.forEach(function (c, i) {
+      L.push("");
+      L.push("[Note " + (i + 1) + "]  " + c.section + "  ·  " + (c.type || "text"));
+      if (c.locator) L.push("  Locator: " + c.locator);
+      L.push("  Jon highlighted:");
+      L.push(indent("“" + c.quote.replace(/\s+/g, " ") + "”"));
+      if (c.context && c.context.length > c.quote.length + 4) {
+        L.push("  Within this text:");
+        L.push(indent("“" + c.context + "”"));
+      }
+      L.push("  Jon's note:");
+      L.push(indent(c.note));
     });
-    return lines.join("\n");
+    L.push("");
+    L.push(rule("="));
+    L.push("End of feedback — " + edits.length + " edit(s), " + store.comments.length + " note(s).");
+    return L.join("\n");
   }
+  function indent(s) { return String(s == null ? "" : s).split("\n").map(function (ln) { return "      " + ln; }).join("\n"); }
   function exportFile() {
     var txt = buildReport();
     var blob = new Blob([txt], { type: "text/markdown" });
