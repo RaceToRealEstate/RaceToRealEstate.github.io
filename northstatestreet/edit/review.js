@@ -334,7 +334,7 @@
       if (d && d.success) toast("✓ Feedback emailed to Barrington");
       else { toast("Send failed — downloading instead"); exportFile(); }
     }).catch(function () { toast("Send failed — downloading instead"); exportFile(); })
-      .then(function () { if (btn) { btn.disabled = false; btn.innerHTML = "✉ Email feedback"; } });
+      .then(function () { if (btn) { btn.disabled = false; btn.innerHTML = "✉ Send Feedback"; } });
   }
 
   function refreshCounts() {
@@ -350,7 +350,7 @@
       '<span class="nssr-hint">Click any text to edit it · select text to leave a note</span>' +
       '<span class="nssr-spacer"></span>' +
       '<button class="nssr-btn" data-act="panel">💬 Notes <span class="nssr-count">0</span></button>' +
-      '<button class="nssr-btn nssr-primary" data-act="email">✉ Email feedback</button>' +
+      '<button class="nssr-btn nssr-primary" data-act="email">✉ Send Feedback</button>' +
       '<button class="nssr-btn nssr-danger" data-act="reset">↺ Reset</button>';
     document.body.appendChild(bar);
 
