@@ -9,7 +9,7 @@
   // Web3Forms access key for DEST. When set, the Email button sends automatically
   // (no mail client). Get a free key at https://web3forms.com (it is emailed to DEST)
   // and paste it here. Left blank => falls back to opening a prefilled email.
-  var ACCESS_KEY = "";
+  var ACCESS_KEY = "0b43b0ee-f3ee-4165-88e4-1c51dc2ee8e5";
 
   // ---------- state ----------
   function blank() { return { edits: {}, comments: [], nextC: 1 }; }
