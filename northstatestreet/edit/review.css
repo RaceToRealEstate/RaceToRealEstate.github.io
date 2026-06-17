@@ -1,0 +1,77 @@
+/* ===== North State St — reviewer annotation tool ===== */
+:root { --nssr-accent:#2563eb; --nssr-bar:#111827; }
+
+/* Bottom toolbar (kept at bottom so it never collides with the site's top nav). */
+.nssr-bar { position:fixed; left:0; right:0; bottom:0; z-index:2147483000;
+  display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;
+  background:var(--nssr-bar); color:#fff; padding:.5rem .8rem;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; font-size:.86rem;
+  box-shadow:0 -4px 18px rgba(0,0,0,.28); }
+.nssr-bar strong { font-weight:700; letter-spacing:.2px; }
+.nssr-bar .nssr-hint { opacity:.75; font-size:.78rem; }
+.nssr-bar .nssr-spacer { flex:1 1 auto; }
+.nssr-btn { background:#374151; color:#fff; border:0; border-radius:.45rem;
+  padding:.4rem .7rem; font-size:.82rem; cursor:pointer; display:inline-flex; gap:.35rem;
+  align-items:center; white-space:nowrap; }
+.nssr-btn:hover { background:#4b5563; }
+.nssr-btn.nssr-primary { background:var(--nssr-accent); }
+.nssr-btn.nssr-primary:hover { background:#1d4ed8; }
+.nssr-btn.nssr-danger:hover { background:#b91c1c; }
+.nssr-count { background:#fbbf24; color:#111827; border-radius:999px; padding:0 .45rem;
+  font-weight:700; font-size:.76rem; min-width:1.2rem; text-align:center; }
+body { padding-bottom:3.2rem; } /* room for the bar */
+
+/* Editable text affordance. */
+[data-nssr-edit]:hover { outline:2px dashed #93c5fd; outline-offset:2px; cursor:text; }
+[data-nssr-edit]:focus { outline:2px solid var(--nssr-accent); outline-offset:2px;
+  background:rgba(37,99,235,.06); }
+[data-nssr-edit].nssr-changed { background:#fef9c3; box-shadow:inset 0 0 0 9999px rgba(250,204,21,.10); }
+
+/* Comment highlight + badge. */
+mark.nssr-hl { background:#fde68a; padding:0 .05em; border-radius:.15em; position:relative; }
+.nssr-badge { background:var(--nssr-accent); color:#fff; font-size:.6rem; font-weight:700;
+  border-radius:999px; padding:0 .35em; margin-left:.15em; vertical-align:super; line-height:1.4; }
+
+/* Floating "add note" button near a selection. */
+.nssr-addbtn { position:absolute; z-index:2147483001; background:var(--nssr-accent); color:#fff;
+  border:0; border-radius:.4rem; padding:.35rem .6rem; font-size:.8rem; cursor:pointer;
+  box-shadow:0 3px 12px rgba(0,0,0,.3); font-family:system-ui,sans-serif; }
+.nssr-addbtn:hover { background:#1d4ed8; }
+
+/* Note composer popup. */
+.nssr-pop { position:absolute; z-index:2147483002; background:#fff; border:1px solid #d1d5db;
+  border-radius:.6rem; box-shadow:0 10px 34px rgba(0,0,0,.25); padding:.7rem; width:280px;
+  font-family:system-ui,sans-serif; }
+.nssr-pop .nssr-quote { font-size:.75rem; color:#6b7280; font-style:italic; margin:0 0 .4rem;
+  max-height:3.2em; overflow:hidden; }
+.nssr-pop textarea { width:100%; min-height:64px; border:1px solid #d1d5db; border-radius:.4rem;
+  padding:.45rem; font-size:.85rem; font-family:inherit; resize:vertical; box-sizing:border-box; }
+.nssr-pop .nssr-pop-row { display:flex; gap:.4rem; justify-content:flex-end; margin-top:.5rem; }
+
+/* Right-side comments drawer. */
+.nssr-panel { position:fixed; top:0; right:0; height:100%; width:340px; max-width:88vw;
+  background:#fff; z-index:2147483000; box-shadow:-6px 0 24px rgba(0,0,0,.22);
+  transform:translateX(102%); transition:transform .25s ease; display:flex; flex-direction:column;
+  font-family:system-ui,sans-serif; }
+.nssr-panel.nssr-open { transform:translateX(0); }
+.nssr-panel header { padding:.8rem 1rem; background:#f3f4f6; border-bottom:1px solid #e5e7eb;
+  display:flex; align-items:center; justify-content:space-between; }
+.nssr-panel header b { font-size:.95rem; }
+.nssr-panel .nssr-list { flex:1; overflow:auto; padding:.6rem .8rem 4rem; }
+.nssr-item { border:1px solid #e5e7eb; border-radius:.5rem; padding:.55rem .65rem; margin-bottom:.55rem; }
+.nssr-item .nssr-sec { font-size:.66rem; text-transform:uppercase; letter-spacing:.4px; color:#9ca3af; }
+.nssr-item .nssr-q { font-size:.78rem; color:#374151; font-style:italic; margin:.15rem 0 .3rem;
+  border-left:3px solid #fde68a; padding-left:.45rem; }
+.nssr-item .nssr-n { font-size:.86rem; color:#111827; }
+.nssr-item .nssr-x { float:right; color:#9ca3af; cursor:pointer; font-size:.95rem; border:0; background:none; }
+.nssr-item .nssr-x:hover { color:#b91c1c; }
+.nssr-empty { color:#9ca3af; font-size:.85rem; text-align:center; margin-top:2rem; }
+
+/* Toast. */
+.nssr-toast { position:fixed; left:50%; bottom:4rem; transform:translateX(-50%);
+  background:#111827; color:#fff; padding:.55rem .9rem; border-radius:.5rem; font-size:.85rem;
+  z-index:2147483003; font-family:system-ui,sans-serif; opacity:0; transition:opacity .2s;
+  pointer-events:none; }
+.nssr-toast.nssr-show { opacity:1; }
+
+@media print { .nssr-bar, .nssr-panel, .nssr-addbtn, .nssr-pop, .nssr-toast { display:none !important; } }
