@@ -593,8 +593,8 @@
       <h2 class="mb-3">Request a Showing</h2>
       <div class="row g-4">
         <div class="col-lg-7">
-          <form id="contactForm" action="{{FORM_ENDPOINT}}" method="POST" novalidate>
-            <input type="hidden" name="access_key" value="{{FORM_ACCESS_KEY}}">
+          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="4851f014-2438-45de-a927-4ef95171c8ac">
             <input type="hidden" name="subject" value="New showing request - Clark House listing">
             <!-- Honeypot: bots fill this; humans never see it. -->
             <input type="checkbox" name="botcheck" class="d-none" tabindex="-1" autocomplete="off"
@@ -765,7 +765,10 @@
           fetch(endpoint, { method: "POST", body: new FormData(form),
               headers: { "Accept": "application/json" } })
             .then(function (r) { return r.json(); })
-            .then(function () { status.textContent = "Thank you — your request was sent to the owner."; form.reset(); })
+            .then(function (d) {
+              if (d && d.success) { status.textContent = "Thank you — your request was sent to the owner."; form.reset(); }
+              else { status.textContent = "Sorry, that didn't go through. Please call or email the owner directly."; }
+            })
             .catch(function () { status.textContent = "Something went wrong. Please call or email the owner directly."; });
         });
       }
