@@ -629,9 +629,9 @@
           <div class="p-3 bg-white rounded shadow-sm">
             <h3 class="h6">Prefer to reach out directly?</h3>
             <p class="mb-1"><i class="bi bi-telephone"></i>
-              <a href="tel:9842355199">(984) 235-5199</a></p>
+              <a class="ch-cloak" data-tel="OTE5OTA2ODMxMA=="></a></p>
             <p class="mb-1"><i class="bi bi-envelope"></i>
-              <a href="mailto:132NorthState@gmail.com">132NorthState@gmail.com</a></p>
+              <a class="ch-cloak" data-eml="MTMyTm9ydGhTdGF0ZUBnbWFpbC5jb20="></a></p>
             <p class="small text-muted mb-0">Showings by appointment only.</p>
             <a class="btn ch-cta text-white w-100 mt-3" href="#contact">Schedule a Showing</a>
           </div>
@@ -647,8 +647,8 @@
         <div class="col-md-5">
           <p class="mb-1"><strong>Cardinal Business Park</strong></p>
           <p class="mb-1">132 North State Street, Haw River, NC 27258</p>
-          <p class="mb-1"><a href="tel:9842355199">(984) 235-5199</a> &middot;
-             <a href="mailto:132NorthState@gmail.com">132NorthState@gmail.com</a></p>
+          <p class="mb-1"><a class="ch-cloak" data-tel="OTE5OTA2ODMxMA=="></a> &middot;
+             <a class="ch-cloak" data-eml="MTMyTm9ydGhTdGF0ZUBnbWFpbC5jb20="></a></p>
           <p class="ch-eho mt-2"><i class="bi bi-house-door"></i> <span>Equal Housing Opportunity</span></p>
           <button class="btn btn-sm btn-outline-light ch-share mt-2" id="shareBtn" type="button">
             <i class="bi bi-share"></i> Share this listing</button>
@@ -771,6 +771,19 @@
             .catch(function () { status.textContent = "Something went wrong. Please call or email the owner directly."; });
         });
       }
+
+      // Reveal cloaked phone/email (kept out of the raw HTML so scrapers/spammers can't harvest them).
+      function chDecode(s) { try { return atob(s); } catch (e) { return ""; } }
+      Array.prototype.forEach.call(document.querySelectorAll("a.ch-cloak[data-tel]"), function (a) {
+        var d = chDecode(a.getAttribute("data-tel")); if (!d) return;
+        a.href = "tel:" + d;
+        a.textContent = "(" + d.slice(0, 3) + ") " + d.slice(3, 6) + "-" + d.slice(6);
+      });
+      Array.prototype.forEach.call(document.querySelectorAll("a.ch-cloak[data-eml]"), function (a) {
+        var e = chDecode(a.getAttribute("data-eml")); if (!e) return;
+        a.href = "mailto:" + e;
+        a.textContent = e;
+      });
 
       // Share control: Web Share API with copy-link fallback.
       var shareBtn = document.getElementById("shareBtn");
