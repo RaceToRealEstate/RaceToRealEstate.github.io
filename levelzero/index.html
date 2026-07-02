@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Barbell Motors — Build Shop</title>
+<meta name="description" content="Apps, websites, and more. Built by Barbell Motors." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --asphalt: #15171b;
+    --surface: #1e2127;
+    --steel: #e8e9ec;
+    --muted: #8a8f98;
+    --amber: #f5a524;
+    --ignite: #e63329;
+    --ignite-deep: #a5170f;
+    --hair: rgba(255, 255, 255, 0.09);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { background: var(--asphalt); }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    color: var(--steel);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(140% 80% at 50% -10%, #22262e 0%, var(--asphalt) 55%);
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 520px;
+    padding: 0 22px 56px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Timing strip */
+  .strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0 14px;
+    border-bottom: 1px solid var(--hair);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .strip .mark { color: var(--steel); font-weight: 700; }
+  .strip .live { display: inline-flex; align-items: center; gap: 7px; color: var(--amber); }
+  .strip .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--amber);
+    box-shadow: 0 0 0 0 rgba(245, 165, 36, 0.6);
+    animation: ping 2.4s ease-out infinite;
+  }
+  @keyframes ping {
+    0% { box-shadow: 0 0 0 0 rgba(245, 165, 36, 0.55); }
+    70%, 100% { box-shadow: 0 0 0 7px rgba(245, 165, 36, 0); }
+  }
+
+  /* Hero */
+  .hero { padding: 46px 0 20px; }
+  .eyebrow {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: "Saira Condensed", sans-serif;
+    font-weight: 800;
+    font-size: clamp(40px, 12vw, 62px);
+    line-height: 0.94;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+  }
+  h1 .glow { color: var(--amber); }
+  .lede {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 40ch;
+  }
+
+  /* Contact */
+  .contact {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border: 1px solid var(--hair);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--steel);
+    text-decoration: none;
+    font-size: 15px;
+    transition: border-color 0.2s ease, transform 0.1s ease;
+  }
+  .contact a:hover { border-color: rgba(245, 165, 36, 0.5); }
+  .contact a:active { transform: scale(0.99); }
+  .contact .tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    min-width: 34px;
+  }
+  .contact .val { font-weight: 500; overflow-wrap: anywhere; }
+
+  /* Divider */
+  .rule {
+    margin: 40px 0 26px;
+    border: 0;
+    border-top: 1px solid var(--hair);
+  }
+
+  /* Roster */
+  .roster-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .event {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--hair);
+  }
+  .event:first-of-type { border-top: 1px solid var(--hair); }
+  .date {
+    font-family: "JetBrains Mono", monospace;
+    text-align: center;
+    min-width: 52px;
+  }
+  .date .m { display: block; font-size: 11px; letter-spacing: 0.14em; color: var(--amber); }
+  .date .d { display: block; font-size: 22px; font-weight: 700; line-height: 1.1; }
+  .event .name { font-size: 15px; font-weight: 500; }
+
+  /* Ignition */
+  .ignition { text-align: center; margin-top: 42px; }
+  .start {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 50% 38%, #ff5147 0%, var(--ignite) 44%, var(--ignite-deep) 100%);
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+      0 0 0 8px rgba(230, 51, 41, 0.10),
+      0 18px 40px rgba(230, 51, 41, 0.28),
+      inset 0 2px 6px rgba(255, 255, 255, 0.25);
+    animation: idle 3.2s ease-in-out infinite;
+    transition: transform 0.12s ease, box-shadow 0.2s ease;
+  }
+  @keyframes idle {
+    0%, 100% { box-shadow: 0 0 0 8px rgba(230, 51, 41, 0.08), 0 18px 40px rgba(230, 51, 41, 0.24), inset 0 2px 6px rgba(255,255,255,0.25); }
+    50% { box-shadow: 0 0 0 14px rgba(230, 51, 41, 0.04), 0 18px 46px rgba(230, 51, 41, 0.34), inset 0 2px 6px rgba(255,255,255,0.25); }
+  }
+  .start:hover { transform: scale(1.03); }
+  .start:active { transform: scale(0.96); }
+  .start .lab {
+    font-family: "Saira Condensed", sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 0.08em;
+  }
+  .start .sub {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    margin-top: 3px;
+    opacity: 0.85;
+  }
+  .ignition .help {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--steel);
+    font-weight: 500;
+  }
+  .ignition .fine {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+    max-width: 34ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  footer {
+    margin-top: 44px;
+    padding-top: 18px;
+    border-top: 1px solid var(--hair);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .start, .dot { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <main class="shell">
+    <div class="strip">
+      <span class="mark">Barbell Motors</span>
+      <span class="live"><span class="dot"></span>Open for builds</span>
+    </div>
+
+    <section class="hero">
+      <p class="eyebrow">Build Shop</p>
+      <h1>Apps, sites &amp; <span class="glow">whatever's next.</span></h1>
+      <p class="lede">For any development need — from apps to websites and beyond — reach out and let's build it.</p>
+
+      <div class="contact">
+        <a href="https://instagram.com/barbellmotors" target="_blank" rel="noopener">
+          <span class="tag">IG</span>
+          <span class="val">@BarbellMotors</span>
+        </a>
+        <a href="mailto:barrington@racetorealestate.com">
+          <span class="tag">Mail</span>
+          <span class="val">barrington@racetorealestate.com</span>
+        </a>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <section class="events">
+      <p class="roster-label">On the calendar</p>
+
+      <div class="event">
+        <span class="date"><span class="m">JUL</span><span class="d">11</span></span>
+        <span class="name">Cruise to RC's Son's Birthday</span>
+      </div>
+      <div class="event">
+        <span class="date"><span class="m">JUL</span><span class="d">25</span></span>
+        <span class="name">Chino's Lake House BBQ</span>
+      </div>
+      <div class="event">
+        <span class="date"><span class="m">AUG</span><span class="d">25</span></span>
+        <span class="name">Cars and Kicks</span>
+      </div>
+    </section>
+
+    <section class="ignition">
+      <a class="start" href="summer-events.ics">
+        <span class="lab">START</span>
+        <span class="sub">ADD TO CALENDAR</span>
+      </a>
+      <p class="help">Adds all 3 events to your calendar.</p>
+      <p class="fine">Works with Apple Calendar, Google Calendar &amp; Outlook. If it opens as text, tap the ••• menu and choose "Open in Safari" or Chrome.</p>
+    </section>
+
+    <footer>Barbell Motors · Race to Real Estate</footer>
+  </main>
+</body>
+</html>
